@@ -2,7 +2,7 @@
 	arr: .word 2, 3, 7, 4, 1
 .text
 main:
-	la	 s0, arr
+	la   s0, arr
 	mv   t3, s0
 	addi s1, s1, 4
 	addi t0, zero, -1
@@ -15,9 +15,9 @@ main:
 
 bbsort:
 	addi sp, sp, -12
-	sw	 ra, 8(sp)
-	sw	 s1, 4(sp)
-	sw	 s0, 0(sp)
+	sw   ra, 8(sp)
+	sw   s1, 4(sp)
+	sw   s0, 0(sp)
 oloop:
 	addi t0, t0, 1
 	mv   t1, zero
@@ -31,14 +31,14 @@ iloop:
 	slli t4, t1, 2
 	add  s0, s0, t4
 	lw   a2, 0(s0)
-	lw	 a3, 4(s0)
+	lw   a3, 4(s0)
 	addi t1, t1, 1
 	blt  a2, a3, swap
-	j	 iloop
+	j    iloop
 swap:
-	sw	 a2, 4(s0)
-	sw	 a3, 0(s0)
-	j	 iloop
+	sw   a2, 4(s0)
+	sw   a3, 0(s0)
+	j    iloop
 
 print: 
 	bge  t0, s1, end
