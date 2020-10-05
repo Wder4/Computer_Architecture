@@ -1,5 +1,5 @@
 .data
-	arr: .word 2, 3, 7, 4, 1
+arr:  .word 2, 3, 7, 4, 1
 .text
 main:
 	la   s0, arr
